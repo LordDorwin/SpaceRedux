@@ -158,6 +158,14 @@
   <ItemGroup>
     <ClInclude Include="..\player.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Sprites\enemy_drone.png" />
+    <Image Include="Sprites\enemy_ship.png" />
+    <Image Include="Sprites\laser.png" />
+    <Image Include="Sprites\player.png" />
+    <Image Include="Sprites\pntdef_bullet.png" />
+    <Image Include="Sprites\point_defense_0.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
