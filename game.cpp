@@ -12,16 +12,13 @@ int main()
 	sf::Clock mainClock; //starting the main game clock
 
 	sf::Time elapsedTime; //creating the time varaiable
-
 	int frameTime;
-	int frameRate = 60;
-	sf::Time lastUpdate = mainClock.getElapsedTime();
-
 	//Game Loop
 	while (window.isOpen())
 	{
-		elapsedTime = mainClock.getElapsedTime();
-		frameTime = elapsedTime.asMilliseconds();
+		elapsedTime = mainClock.restart();
+		frameTime = elapsedTime.asMicroseconds();
+		printf("%d\n", frameTime);
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -48,12 +45,8 @@ int main()
 			printf("back\n");
 		}
 
-		sf::Time currentTime = mainClock.getElapsedTime();
-		elapsedTime = ;
-
 		player.update(frameTime);
 
-		mainClock.restart();
 
 		window.clear();
 		window.draw(player.sprite);

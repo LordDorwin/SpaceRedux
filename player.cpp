@@ -7,6 +7,7 @@
 Player::Player(float x, float y){
 	_x = x;
 	_y = y;
+	_playerSpeed = 0.0009;
 
 	texture.loadFromFile("Sprites/player.png");
 	texture.setSmooth(true);
@@ -27,19 +28,19 @@ void Player::update(int frameTime){
 }
 
 void Player::thrLeft(){
-	_dx = -1;
+	_dx = -_playerSpeed;
 }
 
 void Player::thrRight(){
-	_dx = 1;
+	_dx = _playerSpeed;
 }
 
 void Player::thrForward(){
-	_dy = -1;
+	_dy = -_playerSpeed;
 }
 
 void Player::thrBack(){
-	_dy = 1;
+	_dy = _playerSpeed;
 }
 
 void Player::rotate(double tarDirection){

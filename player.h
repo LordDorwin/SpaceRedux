@@ -31,7 +31,7 @@ public:
 	void rotate(double tarDirection);
 private:
 	
-	float _x = 0, _y = 0, _dx = 0, _dy = 0;
+	float _x = 0, _y = 0, _dx = 0, _dy = 0, _playerSpeed = 0;
 	double direction = 0;
 
 };
