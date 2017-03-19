@@ -158,6 +158,16 @@
   <ItemGroup>
     <ClInclude Include="..\player.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\SpaceRedux\Sprites\defense_drone.png" />
+    <Image Include="..\SpaceRedux\Sprites\drone_laser.png" />
+    <Image Include="..\SpaceRedux\Sprites\enemy_drone.png" />
+    <Image Include="..\SpaceRedux\Sprites\enemy_ship.png" />
+    <Image Include="..\SpaceRedux\Sprites\laser.png" />
+    <Image Include="..\SpaceRedux\Sprites\player.png" />
+    <Image Include="..\SpaceRedux\Sprites\pntdef_bullet.png" />
+    <Image Include="..\SpaceRedux\Sprites\point_defense_0.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

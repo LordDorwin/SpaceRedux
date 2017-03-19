@@ -27,4 +27,30 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\SpaceRedux\Sprites\point_defense_0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\SpaceRedux\Sprites\pntdef_bullet.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\SpaceRedux\Sprites\player.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\SpaceRedux\Sprites\laser.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\SpaceRedux\Sprites\enemy_ship.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\SpaceRedux\Sprites\enemy_drone.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\SpaceRedux\Sprites\drone_laser.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\SpaceRedux\Sprites\defense_drone.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

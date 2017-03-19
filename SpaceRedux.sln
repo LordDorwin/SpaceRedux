@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceRedux", "SpaceRedux\SpaceRedux.vcxproj", "{F68757FA-BE27-4D3A-91EF-F7932F040977}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceRedux", "SpaceRedux.vcxproj", "{399B376C-1146-4560-8CC7-B4B974CDCBCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F68757FA-BE27-4D3A-91EF-F7932F040977}.Debug|x64.ActiveCfg = Debug|x64
-		{F68757FA-BE27-4D3A-91EF-F7932F040977}.Debug|x64.Build.0 = Debug|x64
-		{F68757FA-BE27-4D3A-91EF-F7932F040977}.Debug|x86.ActiveCfg = Debug|Win32
-		{F68757FA-BE27-4D3A-91EF-F7932F040977}.Debug|x86.Build.0 = Debug|Win32
-		{F68757FA-BE27-4D3A-91EF-F7932F040977}.Release|x64.ActiveCfg = Release|x64
-		{F68757FA-BE27-4D3A-91EF-F7932F040977}.Release|x64.Build.0 = Release|x64
-		{F68757FA-BE27-4D3A-91EF-F7932F040977}.Release|x86.ActiveCfg = Release|Win32
-		{F68757FA-BE27-4D3A-91EF-F7932F040977}.Release|x86.Build.0 = Release|Win32
+		{399B376C-1146-4560-8CC7-B4B974CDCBCD}.Debug|x64.ActiveCfg = Debug|x64
+		{399B376C-1146-4560-8CC7-B4B974CDCBCD}.Debug|x64.Build.0 = Debug|x64
+		{399B376C-1146-4560-8CC7-B4B974CDCBCD}.Debug|x86.ActiveCfg = Debug|Win32
+		{399B376C-1146-4560-8CC7-B4B974CDCBCD}.Debug|x86.Build.0 = Debug|Win32
+		{399B376C-1146-4560-8CC7-B4B974CDCBCD}.Release|x64.ActiveCfg = Release|x64
+		{399B376C-1146-4560-8CC7-B4B974CDCBCD}.Release|x64.Build.0 = Release|x64
+		{399B376C-1146-4560-8CC7-B4B974CDCBCD}.Release|x86.ActiveCfg = Release|Win32
+		{399B376C-1146-4560-8CC7-B4B974CDCBCD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

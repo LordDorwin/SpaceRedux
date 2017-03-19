@@ -22,11 +22,14 @@ int main()
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
 			player.thrForward();
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 			player.thrLeft();
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 			player.thrRight();
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+			player.thrBack();
 		}
 		player.update();
 
