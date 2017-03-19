@@ -3,6 +3,7 @@
 
 # VS User Files
 *.vcxproj
+*.vcxproj.filters
 
 # User-specific files
 *.suo
