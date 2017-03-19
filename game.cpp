@@ -25,6 +25,9 @@ int main()
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
 			player.thrLeft();
 		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+			player.thrRight();
+		}
 		player.update();
 
 		window.clear();
