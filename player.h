@@ -19,7 +19,7 @@ public:
 	~Player();
 	
 	//Code to be executed once per game loop
-	void update();
+	void update(int frameTime);
 
 	//Movement functions
 	void thrLeft();
@@ -31,7 +31,7 @@ public:
 	void rotate(double tarDirection);
 private:
 	
-	float _x, _y = 0;
+	float _x = 0, _y = 0, _dx = 0, _dy = 0;
 	double direction = 0;
 
 };

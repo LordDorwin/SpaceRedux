@@ -19,24 +19,27 @@ Player::~Player(){
 
 }
 
-void Player::update(){
+void Player::update(int frameTime){
+	_x += _dx * frameTime;
+	_y += _dy * frameTime;
 	sprite.setPosition(sf::Vector2f(_x, _y));
+	_dx = 0, _dy = 0;
 }
 
 void Player::thrLeft(){
-	_x -= 1;
+	_dx = -1;
 }
 
 void Player::thrRight(){
-	_x += 1;
+	_dx = 1;
 }
 
 void Player::thrForward(){
-	_y -= 1;
+	_dy = -1;
 }
 
 void Player::thrBack(){
-	_y += 1;
+	_dy = 1;
 }
 
 void Player::rotate(double tarDirection){
