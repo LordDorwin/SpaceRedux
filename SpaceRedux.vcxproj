@@ -114,7 +114,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\ryblu\Documents\Visual Studio 2017\SFMLlib\64bit</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\sfml\x64\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\sfml\x64\lib</AdditionalLibraryDirectories>
