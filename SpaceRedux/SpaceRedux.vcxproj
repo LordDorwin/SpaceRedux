@@ -159,6 +159,8 @@
     <ClInclude Include="..\player.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Sprites\defense_drone.png" />
+    <Image Include="Sprites\drone_laser.png" />
     <Image Include="Sprites\enemy_drone.png" />
     <Image Include="Sprites\enemy_ship.png" />
     <Image Include="Sprites\laser.png" />

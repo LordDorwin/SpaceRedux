@@ -46,5 +46,11 @@
     <Image Include="Sprites\enemy_drone.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Sprites\defense_drone.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Sprites\drone_laser.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

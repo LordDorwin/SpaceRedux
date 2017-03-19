@@ -114,7 +114,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\sfml\x64\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\ryblu\Documents\Visual Studio 2017\SFMLlib\64bit</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\sfml\x64\lib</AdditionalLibraryDirectories>
@@ -127,10 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="player.h" />
-    <ClInclude Include="spaceredux\resource.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="spaceredux\SpaceRedux.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
