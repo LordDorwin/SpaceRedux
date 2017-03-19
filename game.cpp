@@ -23,7 +23,7 @@ int main()
 			player.thrForward();
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-			player.thr
+			player.thrLeft();
 		}
 		player.update();
 
