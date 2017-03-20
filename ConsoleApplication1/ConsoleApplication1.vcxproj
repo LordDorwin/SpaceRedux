@@ -36,7 +36,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -153,10 +153,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\game.cpp" />
+    <ClCompile Include="..\globals.cpp" />
     <ClCompile Include="..\player.cpp" />
+    <ClCompile Include="..\utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\globals.h" />
     <ClInclude Include="..\player.h" />
+    <ClInclude Include="..\utility.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\SpaceRedux\Sprites\defense_drone.png" />
