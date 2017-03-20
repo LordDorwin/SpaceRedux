@@ -6,6 +6,7 @@
 
 int main()
 {
+	const int maxFrameTime = 100;
 	sf::RenderWindow window(sf::VideoMode(1024, 680), "Clunker Spaceship");
 
 	Player player = Player(200, 200);
@@ -16,9 +17,6 @@ int main()
 	//Game Loop
 	while (window.isOpen())
 	{
-		elapsedTime = mainClock.restart();
-		frameTime = elapsedTime.asMicroseconds();
-		printf("%d\n", frameTime);
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -44,6 +42,11 @@ int main()
 			player.thrBack();
 			printf("back\n");
 		}
+
+		sf::Time elapsedTime = mainClock.restart();
+		frameTime = elapsedTime.asMilliseconds();
+		
+		frameTime = std::min(frameTime, maxFrameTime);
 
 		player.update(frameTime);
 

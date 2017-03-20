@@ -7,7 +7,7 @@
 Player::Player(float x, float y){
 	_x = x;
 	_y = y;
-	_playerSpeed = 0.0009;
+	_playerSpeed = 0.1;
 
 	texture.loadFromFile("Sprites/player.png");
 	texture.setSmooth(true);
