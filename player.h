@@ -14,8 +14,13 @@ public:
 	sf::Sprite sprite;
 	sf::Texture texture;
 
+	//Thrust
+	float fThrust = 0.00035;
+	float sThrust = 0.0002;
+	float rThrust = 0.0002;
+
 	//Constructors/Destructors
-	Player(float x, float y);
+	Player(int x, int y);
 	~Player();
 	
 	//Code to be executed once per game loop
@@ -31,8 +36,8 @@ public:
 	void rotate(double tarDirection);
 private:
 	
-	float _x = 0, _y = 0, _dx = 0, _dy = 0, _playerSpeed = 0;
-	double direction = 0;
+	float _x = 0, _y = 0, _dx = 0, _dy = 0;
+	double direction;
 
 };
 

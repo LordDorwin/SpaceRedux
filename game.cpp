@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include"player.h"
+#include"globals.h"
 
 int main()
 {
@@ -28,26 +29,28 @@ int main()
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
 			player.thrForward();
-			printf("forward\n");
+			//printf("forward\n");
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 			player.thrLeft();
-			printf("left\n");
+			//printf("left\n");
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 			player.thrRight();
-			printf("right\n");
+			//printf("right\n");
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 			player.thrBack();
-			printf("back\n");
+			//printf("back\n");
 		}
-
+		sf::Vector2i mousePos = sf::Mouse::getPosition(window); // window is a sf::Window
+		mouse::x = mousePos.x;
+		mouse::y = mousePos.y;
 		sf::Time elapsedTime = mainClock.restart();
 		frameTime = elapsedTime.asMicroseconds();
 		
 		frameTime = std::min(frameTime, maxFrameTime);
-		printf("%d\n", frameTime);
+		//printf("%d\n", frameTime);
 		player.update(frameTime);
 
 
