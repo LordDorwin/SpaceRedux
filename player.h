@@ -19,6 +19,9 @@ public:
 	float sThrust = 0.0002;
 	float rThrust = 0.0002;
 
+	//Turning
+	float turnSpeed = 0.03;
+
 	//Constructors/Destructors
 	Player(int x, int y);
 	~Player();
@@ -33,11 +36,15 @@ public:
 	void thrBack();
 
 	//Rotate ship towards target direction
-	void rotate(double tarDirection);
+	double rotate(double curDirection, double tarDirection);
 private:
 	
 	float _x = 0, _y = 0, _dx = 0, _dy = 0;
 	double direction;
+	double curDirection;
+	double tarDirection;
+	double turn;
+	float getDirection;
 
 };
 
