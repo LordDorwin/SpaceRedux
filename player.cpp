@@ -39,13 +39,13 @@ void Player::update(int frameTime){
 }
 
 void Player::thrLeft(){
-	_dx += sThrust * cos(degRad(direction + 90));
-	_dy += sThrust * sin(degRad(direction + 90));
+	_dx += sThrust * cos(degRad(direction - 90));
+	_dy += sThrust * sin(degRad(direction - 90));
 }
 
 void Player::thrRight(){
-	_dx += sThrust * cos(degRad(direction - 90));
-	_dy += sThrust * sin(degRad(direction - 90));
+	_dx += sThrust * cos(degRad(direction + 90));
+	_dy += sThrust * sin(degRad(direction + 90));
 }
 
 void Player::thrForward(){
