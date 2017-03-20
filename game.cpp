@@ -6,7 +6,7 @@
 
 int main()
 {
-	const int maxFrameTime = 100;
+	const int maxFrameTime = 100000;
 	sf::RenderWindow window(sf::VideoMode(1024, 680), "Clunker Spaceship");
 
 	Player player = Player(200, 200);
@@ -44,10 +44,10 @@ int main()
 		}
 
 		sf::Time elapsedTime = mainClock.restart();
-		frameTime = elapsedTime.asMilliseconds();
+		frameTime = elapsedTime.asMicroseconds();
 		
 		frameTime = std::min(frameTime, maxFrameTime);
-
+		printf("%d\n", frameTime);
 		player.update(frameTime);
 
 
