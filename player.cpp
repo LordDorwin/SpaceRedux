@@ -60,7 +60,7 @@ void Player::thrBack(){
 
 double Player::rotate(double curDirection, double tarDirection) //this logic sucked so hard
 {
-	if (abs(curDirection - tarDirection) <5) {
+	if (abs(curDirection - tarDirection) <2) {
 		return 0;
 	} else if (curDirection - tarDirection > abs(curDirection - (360 + tarDirection))) {
 		if (curDirection - tarDirection > 0) {
