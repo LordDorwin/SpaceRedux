@@ -24,38 +24,66 @@ Player::~Player(){
 }
 
 void Player::update(int frameTime){
+
+	//Calculate amount to rotate
+	//Direction is used for movement, cur,tarDirection used for rotation
 	getDirection = sprite.getRotation();
 	curDirection = (double)getDirection; 
 	tarDirection = pointDirection((int)_x, (int)_y, mouse::x, mouse::y);  
 	turn = rotate(curDirection, tarDirection);
 	direction = getDirection + turn; 
-	printf("%lf\n", direction);
-	_x += _dx * frameTime;
-	_y += _dy * frameTime;
+	//printf("%lf\n", direction);
 	sprite.setPosition(sf::Vector2f(_x, _y));
 	//sprite.setRotation(direction);
-	sprite.rotate(turn); 
-	_dx = 0, _dy = 0;
+	sprite.rotate(turn);
+
+	//Adjust for time spent in previous frame
+	//thrVecX *= frameTime;
+	//thrVecY *= frameTime;
+
+	//Apply thrust to heading
+	heaVecX += thrVecX;
+	heaVecY += thrVecY;
+
+	//Calculate resulting heading
+	heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
+	heaDir = radDeg(acos(heaVecX / heaSpeed));
+
+	//Limit speed
+	if (heaSpeed > maxSpeed) {
+		heaVecX = maxSpeed * radDeg(abs(cos(heaDir))) * sign(thrVecX) / frameTime;
+		heaVecY = maxSpeed * radDeg(abs(sin(heaDir))) * sign(thrVecY) / frameTime;
+	}
+	printf("%lf,  %lf\n", thrVecX, thrVecY);
+	printf("%lf,  %lf\n", heaVecX, heaVecY);
+	printf("\n");
+
+	//Apply speed
+	_x += heaVecX * frameTime;
+	_y += heaVecY * frameTime;
+	
+	//Reset thrust vectors
+	thrVecX = 0, thrVecY = 0;
 }
 
 void Player::thrLeft(){
-	_dx += sThrust * cos(degRad(direction - 90));
-	_dy += sThrust * sin(degRad(direction - 90));
+	thrVecX += sThrust * cos(degRad(direction - 90));
+	thrVecY += sThrust * sin(degRad(direction - 90));
 }
 
 void Player::thrRight(){
-	_dx += sThrust * cos(degRad(direction + 90));
-	_dy += sThrust * sin(degRad(direction + 90));
+	thrVecX += sThrust * cos(degRad(direction + 90));
+	thrVecY += sThrust * sin(degRad(direction + 90));
 }
 
 void Player::thrForward(){
-	_dx += fThrust * cos(degRad(direction ));
-	_dy += fThrust * sin(degRad(direction ));
+	thrVecX += fThrust * cos(degRad(direction ));
+	thrVecY += fThrust * sin(degRad(direction ));
 }
 
 void Player::thrBack(){
-	_dx += rThrust * cos(degRad(direction + 180));
-	_dy += rThrust * sin(degRad(direction + 180));
+	thrVecX += rThrust * cos(degRad(direction + 180));
+	thrVecY += rThrust * sin(degRad(direction + 180));
 }
 
 double Player::rotate(double curDirection, double tarDirection) //this logic sucked so hard

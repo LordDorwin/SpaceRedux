@@ -14,3 +14,10 @@ double degRad(double deg) {
 double radDeg(double rad) {
 	return rad * 180 / 3.1415926535897932;
 }
+
+int sign(float num)
+{
+	if (num < 0) return -1;
+	if (num > 0) return 1;
+	return 0;
+}

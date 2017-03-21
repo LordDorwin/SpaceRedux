@@ -8,5 +8,6 @@
 double pointDirection(int x1, int y1, int x2, int y2);
 double degRad(double deg);
 double radDeg(double rad);
+int sign(float num);
 
 #endif
