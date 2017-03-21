@@ -38,8 +38,11 @@ void Player::update(int frameTime){
 	sprite.rotate(turn);
 
 	//Apply thrust to heading (accounting for time spent in frame
+	//printf("%d", frameTime);
+	printf("pre: %d, %d\n", heaVecX, heaVecY);
 	heaVecX = (heaVecX / frameTime) + thrVecX;
 	heaVecY = (heaVecY / frameTime) + thrVecY;
+	printf("post: %d, %d\n", heaVecX, heaVecY);
 
 	//Calculate resulting heading
 	heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
@@ -49,6 +52,7 @@ void Player::update(int frameTime){
 	if (heaSpeed > maxSpeed) {
 		heaVecX = maxSpeed * radDeg(abs(cos(heaDir))) * sign(thrVecX);
 		heaVecY = maxSpeed * radDeg(abs(sin(heaDir))) * sign(thrVecY);
+		printf("shits fucked");
 	}
 	printf("%lf,  %lf\n", thrVecX, thrVecY);
 	printf("%lf,  %lf\n", heaVecX, heaVecY);
