@@ -37,13 +37,9 @@ void Player::update(int frameTime){
 	//sprite.setRotation(direction);
 	sprite.rotate(turn);
 
-	//Adjust for time spent in previous frame
-	//thrVecX *= frameTime;
-	//thrVecY *= frameTime;
-
-	//Apply thrust to heading
-	heaVecX += thrVecX;
-	heaVecY += thrVecY;
+	//Apply thrust to heading (accounting for time spent in frame
+	heaVecX = (heaVecX / frameTime) + thrVecX;
+	heaVecY = (heaVecY / frameTime) + thrVecY;
 
 	//Calculate resulting heading
 	heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
@@ -51,8 +47,8 @@ void Player::update(int frameTime){
 
 	//Limit speed
 	if (heaSpeed > maxSpeed) {
-		heaVecX = maxSpeed * radDeg(abs(cos(heaDir))) * sign(thrVecX) / frameTime;
-		heaVecY = maxSpeed * radDeg(abs(sin(heaDir))) * sign(thrVecY) / frameTime;
+		heaVecX = maxSpeed * radDeg(abs(cos(heaDir))) * sign(thrVecX);
+		heaVecY = maxSpeed * radDeg(abs(sin(heaDir))) * sign(thrVecY);
 	}
 	printf("%lf,  %lf\n", thrVecX, thrVecY);
 	printf("%lf,  %lf\n", heaVecX, heaVecY);
