@@ -38,17 +38,18 @@ void Player::update(int frameTime){
 	sprite.rotate(turn);
 
 	//Apply thrust
-	printf("pre: %lf, %lf\n", heaVecX, heaVecY);
+	//printf("pre: %lf, %lf\n", heaVecX, heaVecY);
 	heaVecX = (heaVecX) + thrVecX;
 	heaVecY = (heaVecY) + thrVecY;
-	printf("post: %lf, %lf\n", heaVecX, heaVecY);
+	//printf("post: %lf, %lf\n", heaVecX, heaVecY);
 
 	//Calculate resulting heading
 	heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
-	//calculate direction
+	heaDir = radDeg(acos(heaVecX / heaSpeed));
 
 	if (heaSpeed > maxSpeed) {
-		//limit speed
+		heaVecX = maxSpeed * abs(cos(degRad(heaDir))) * sign(heaVecX);
+		heaVecY = maxSpeed * abs(sin(degRad(heaDir))) * sign(heaVecY);
 	}
 
 	//Move ship
