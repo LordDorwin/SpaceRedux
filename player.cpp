@@ -58,7 +58,7 @@ void Player::update(int frameTime){
 	}
 	
 	//Move ship if magnitude is significant
-	if (heaVecX > 0.00000003f && heaVecY > 0.00000003f) {
+	if (heaVecX > 0.000000005f && heaVecY > 0.000000005f) {
 		_x += heaVecX * frameTime;
 		_y += heaVecY * frameTime;
 	} else {
