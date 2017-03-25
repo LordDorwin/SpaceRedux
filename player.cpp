@@ -57,10 +57,13 @@ void Player::update(int frameTime){
 		heaVecY += -globals::friction * sign(heaVecY);
 	}
 	
-
-	//Move ship
-	_x += heaVecX * frameTime;
-	_y += heaVecY * frameTime;
+	//Move ship if magnitude is significant
+	if (heaVecX > 0.00000003f && heaVecY > 0.00000003f) {
+		_x += heaVecX * frameTime;
+		_y += heaVecY * frameTime;
+	} else {
+		heaVecX = 0; heaVecY = 0;
+	}
 
 	//Reset thrust vectors
 	thrVecX = 0;
