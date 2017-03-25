@@ -10,4 +10,8 @@ namespace mouse {
 	extern int x, y;
 }
 
+namespace globals {
+	const float friction = 0.00000003f;
+}
+
 #endif

@@ -5,3 +5,5 @@
 namespace mouse {
 	int x, y;
 }
+
+

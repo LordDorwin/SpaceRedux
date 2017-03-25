@@ -37,20 +37,26 @@ void Player::update(int frameTime){
 	//sprite.setRotation(direction);
 	sprite.rotate(turn);
 
-	//Apply thrust
-	//printf("pre: %lf, %lf\n", heaVecX, heaVecY);
-	heaVecX = (heaVecX) + thrVecX;
-	heaVecY = (heaVecY) + thrVecY;
-	//printf("post: %lf, %lf\n", heaVecX, heaVecY);
+	if (thrVecX != 0 && thrVecY != 0) {
+		//Apply thrust
+		heaVecX = (heaVecX)+thrVecX;
+		heaVecY = (heaVecY)+thrVecY;
 
-	//Calculate resulting heading
-	heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
-	heaDir = radDeg(acos(heaVecX / heaSpeed));
+		//Calculate resulting heading
+		heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
+		heaDir = radDeg(acos(heaVecX / heaSpeed));
 
-	if (heaSpeed > maxSpeed) {
-		heaVecX = maxSpeed * abs(cos(degRad(heaDir))) * sign(heaVecX);
-		heaVecY = maxSpeed * abs(sin(degRad(heaDir))) * sign(heaVecY);
+		//Limit speed
+		if (heaSpeed > maxSpeed) {
+			heaVecX = maxSpeed * abs(cos(degRad(heaDir))) * sign(heaVecX);
+			heaVecY = maxSpeed * abs(sin(degRad(heaDir))) * sign(heaVecY);
+		}
+	} else {
+		//Apply friction
+		heaVecX += -globals::friction * sign(heaVecX);
+		heaVecY += -globals::friction * sign(heaVecY);
 	}
+	
 
 	//Move ship
 	_x += heaVecX * frameTime;
