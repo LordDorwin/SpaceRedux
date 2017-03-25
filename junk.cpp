@@ -7,10 +7,10 @@
 
 //Apply thrust to heading (accounting for time spent in frame
 //printf("%d", frameTime);
-printf("pre: %d, %d\n", heaVecX, heaVecY);
+printf("pre: %lf, %lf\n", heaVecX, heaVecY);
 heaVecX = (heaVecX / frameTime) + thrVecX;
 heaVecY = (heaVecY / frameTime) + thrVecY;
-printf("post: %d, %d\n", heaVecX, heaVecY);
+printf("post: %lf, %lf\n", heaVecX, heaVecY);
 
 //Calculate resulting heading
 heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));

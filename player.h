@@ -15,9 +15,9 @@ public:
 	sf::Texture texture;
 
 	//Thrust
-	float fThrust = 0.00025f;
-	float sThrust = 0.0015f;
-	float rThrust = 0.001f;
+	float fThrust = 0.00000025f;
+	float sThrust = 0.000000005f;
+	float rThrust = 0.00000001f;
 
 	//Turning
 	float turnSpeed = 0.1f;

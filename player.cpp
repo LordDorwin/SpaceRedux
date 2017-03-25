@@ -38,8 +38,10 @@ void Player::update(int frameTime){
 	sprite.rotate(turn);
 
 	//Apply thrust
-	heaVecX = (heaVecX/frameTime) + thrVecX;
-	heaVecY = (heaVecY/frameTime) + thrVecY;
+	printf("pre: %lf, %lf\n", heaVecX, heaVecY);
+	heaVecX = (heaVecX) + thrVecX;
+	heaVecY = (heaVecY) + thrVecY;
+	printf("post: %lf, %lf\n", heaVecX, heaVecY);
 
 	//Calculate resulting heading
 	heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
