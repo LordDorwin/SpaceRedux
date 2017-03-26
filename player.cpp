@@ -41,6 +41,7 @@ void Player::update(int frameTime){
 		//Apply thrust
 		heaVecX = (heaVecX)+thrVecX;
 		heaVecY = (heaVecY)+thrVecY;
+		//printf("%lf %lf\n", heaVecX, heaVecY);
 
 		//Calculate resulting heading
 		heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
@@ -66,6 +67,7 @@ void Player::update(int frameTime){
 	}
 
 	//Reset thrust vectors
+	printf("%f %f\n", thrVecX, thrVecY);
 	thrVecX = 0;
 	thrVecY = 0;
 }
@@ -73,21 +75,29 @@ void Player::update(int frameTime){
 void Player::thrLeft(){
 	thrVecX += sThrust * cos(degRad(direction - 90));
 	thrVecY += sThrust * sin(degRad(direction - 90));
+	printf("%lf\n", direction);
+	//printf("%lf %lf\n", thrVecX, thrVecY);
 }
 
 void Player::thrRight(){
 	thrVecX += sThrust * cos(degRad(direction + 90));
 	thrVecY += sThrust * sin(degRad(direction + 90));
+	//printf("%lf %lf\n", thrVecX, thrVecY);
+	printf("%lf\n", direction);
 }
 
 void Player::thrForward(){
 	thrVecX += fThrust * cos(degRad(direction ));
 	thrVecY += fThrust * sin(degRad(direction ));
+	//printf("%lf %lf\n", thrVecX, thrVecY);
+	printf("%lf\n", direction);
 }
 
 void Player::thrBack(){
 	thrVecX += rThrust * cos(degRad(direction + 180));
 	thrVecY += rThrust * sin(degRad(direction + 180));
+	//printf("%lf %lf\n", thrVecX, thrVecY);
+	printf("%lf\n", direction);
 }
 
 double Player::rotate(double curDirection, double tarDirection) //this logic sucked so hard
