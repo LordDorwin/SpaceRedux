@@ -22,13 +22,14 @@ int main()
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-			/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-				printf("death is the only escape\n");
-			}*/
+			if (event.type == sf::Event::Closed) {
+				break;
+			}
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+			break;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 			player.thrForward();
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
@@ -61,5 +62,6 @@ int main()
 
 	}//End of game Loop
 
+	window.close();
 	return 0;
 }
