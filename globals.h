@@ -11,7 +11,7 @@ namespace mouse {
 }
 
 namespace globals {
-	const float friction = 0.00000003f;
+	const float friction = 0.000000015f;
 }
 
 #endif

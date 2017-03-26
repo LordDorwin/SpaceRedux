@@ -37,11 +37,10 @@ void Player::update(int frameTime){
 	//sprite.setRotation(direction);
 	sprite.rotate(turn);
 
-	if (thrVecX != 0 && thrVecY != 0) {
+	if (thrVecX != 0 || thrVecY != 0) {
 		//Apply thrust
 		heaVecX = (heaVecX)+thrVecX;
 		heaVecY = (heaVecY)+thrVecY;
-		//printf("%lf %lf\n", heaVecX, heaVecY);
 
 		//Calculate resulting heading
 		heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
@@ -58,16 +57,12 @@ void Player::update(int frameTime){
 		heaVecY += -globals::friction * sign(heaVecY);
 	}
 	
-	//Move ship if magnitude is significant
-	if (heaVecX > 0.000000005f && heaVecY > 0.000000005f) {
-		_x += heaVecX * frameTime;
-		_y += heaVecY * frameTime;
-	} else {
-		heaVecX = 0; heaVecY = 0;
-	}
+	//Move Ship
+	_x += heaVecX * frameTime;
+	_y += heaVecY * frameTime;
+	
 
 	//Reset thrust vectors
-	printf("%f %f\n", thrVecX, thrVecY);
 	thrVecX = 0;
 	thrVecY = 0;
 }
@@ -75,29 +70,21 @@ void Player::update(int frameTime){
 void Player::thrLeft(){
 	thrVecX += sThrust * cos(degRad(direction - 90));
 	thrVecY += sThrust * sin(degRad(direction - 90));
-	printf("%lf\n", direction);
-	//printf("%lf %lf\n", thrVecX, thrVecY);
 }
 
 void Player::thrRight(){
 	thrVecX += sThrust * cos(degRad(direction + 90));
 	thrVecY += sThrust * sin(degRad(direction + 90));
-	//printf("%lf %lf\n", thrVecX, thrVecY);
-	printf("%lf\n", direction);
 }
 
 void Player::thrForward(){
 	thrVecX += fThrust * cos(degRad(direction ));
 	thrVecY += fThrust * sin(degRad(direction ));
-	//printf("%lf %lf\n", thrVecX, thrVecY);
-	printf("%lf\n", direction);
 }
 
 void Player::thrBack(){
 	thrVecX += rThrust * cos(degRad(direction + 180));
 	thrVecY += rThrust * sin(degRad(direction + 180));
-	//printf("%lf %lf\n", thrVecX, thrVecY);
-	printf("%lf\n", direction);
 }
 
 double Player::rotate(double curDirection, double tarDirection) //this logic sucked so hard

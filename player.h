@@ -4,11 +4,12 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "entity.h"
 
 #ifndef PLAYER_H
 #define PLAYER_H
 
-class Player {
+class Player : public Entity{
 public:
 
 	sf::Sprite sprite;
