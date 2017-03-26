@@ -23,7 +23,7 @@ int main()
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed) {
-				break;
+				window.close();
 			}
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
