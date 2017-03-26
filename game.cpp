@@ -15,6 +15,7 @@ int main()
 
 	sf::Time elapsedTime; //creating the time varaiable
 	int frameTime;
+
 	//Game Loop
 	while (window.isOpen())
 	{
@@ -29,31 +30,31 @@ int main()
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
 			player.thrForward();
-			//printf("forward\n");
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 			player.thrLeft();
-			//printf("left\n");
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 			player.thrRight();
-			//printf("right\n");
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 			player.thrBack();
-			//printf("back\n");
 		}
-		sf::Vector2i mousePos = sf::Mouse::getPosition(window); // window is a sf::Window
+
+		//Update Mouse position
+		sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 		mouse::x = mousePos.x;
 		mouse::y = mousePos.y;
+
+		//Calculate frameTime
 		sf::Time elapsedTime = mainClock.restart();
 		frameTime = elapsedTime.asMicroseconds();
-		
 		frameTime = std::min(frameTime, maxFrameTime);
-		//printf("%d\n", frameTime);
+
+		//Update Entities
 		player.update(frameTime);
 
-
+		//Draw frame
 		window.clear();
 		window.draw(player.sprite);
 		window.display();

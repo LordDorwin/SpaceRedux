@@ -26,17 +26,16 @@ Player::~Player(){
 void Player::update(int frameTime){
 
 	//Calculate amount to rotate
-	//Direction is used for movement, cur,tarDirection used for rotation
+	//Direction is used for movement, cur/tarDirection used for rotation
 	getDirection = sprite.getRotation();
 	curDirection = (double)getDirection; 
 	tarDirection = pointDirection((int)_x, (int)_y, mouse::x, mouse::y);  
 	turn = rotate(curDirection, tarDirection);
 	direction = getDirection + turn; 
-	//printf("%lf\n", direction);
 	sprite.setPosition(sf::Vector2f(_x, _y));
-	//sprite.setRotation(direction);
 	sprite.rotate(turn);
 
+	//Only do heading calculations if thrust is being applied
 	if (thrVecX != 0 || thrVecY != 0) {
 		//Apply thrust
 		heaVecX = (heaVecX)+thrVecX;

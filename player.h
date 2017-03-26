@@ -15,16 +15,12 @@ public:
 	sf::Sprite sprite;
 	sf::Texture texture;
 
-	//Thrust
+	//Movement variables
 	float fThrust = 0.00000025f;
 	float sThrust = 0.00000022f;
 	float rThrust = 0.00000022f;
-
-	//Turning
-	float turnSpeed = 0.1f;
-
-	//Various movement variables
 	float maxSpeed = 0.0001f;
+	float turnSpeed = 0.1f;
 
 	//Constructors/Destructors
 	Player(int x, int y);
