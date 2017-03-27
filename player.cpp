@@ -11,12 +11,12 @@ Player::Player(int x, int y){
 	_x = x;
 	_y = y;
 
-	texture.loadFromFile("Sprites/new_player.png");
+	texture.loadFromFile("Sprites/new_player_big.png");
 	texture.setSmooth(true);
 
 	sprite.setTexture(texture);
 	sprite.setPosition(sf::Vector2f(_x, _y));
-	sprite.setOrigin(sf::Vector2f(9.5, 4.5));
+	sprite.setOrigin(sf::Vector2f(22, 11.5));
 }
 
 Player::~Player(){
