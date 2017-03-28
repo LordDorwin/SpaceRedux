@@ -8,6 +8,8 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+class sf::Window;
+
 class Entity {
 public:
 	//Constructors/Destructors
@@ -18,7 +20,7 @@ public:
 	virtual void update(int frameTime)=0;
 
 	//Draw entity to designated window
-	virtual void draw(sf::RenderWindow window)=0;
+	virtual void draw(sf::RenderWindow* window)=0;
 };
 
 #endif

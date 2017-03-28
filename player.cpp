@@ -70,8 +70,8 @@ void Player::update(int frameTime){
 	thrVecY = 0;
 }
 
-void Player::draw(sf::RenderWindow window){
-	window.draw(sprite);
+void Player::draw(sf::RenderWindow* window){
+	window->draw(sprite);
 }
 
 void Player::thrLeft(){

@@ -33,7 +33,7 @@ public:
 	virtual void update(int frameTime);
 
 	//Draw entity to designated window
-	virtual void draw(sf::RenderWindow window);
+	virtual void draw(sf::RenderWindow* window);
 
 	//Movement functions
 	void thrLeft();
