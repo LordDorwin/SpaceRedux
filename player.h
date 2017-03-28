@@ -11,6 +11,11 @@
 
 class Player : public Entity{
 public:
+	
+	//Constructors/Destructors
+	Player();
+	Player(int x, int y);
+	~Player();
 
 	sf::Sprite sprite;
 	sf::Texture texture;
@@ -22,12 +27,13 @@ public:
 	float maxSpeed = 0.0001f;
 	float turnSpeed = 0.1f;
 
-	//Constructors/Destructors
-	Player(int x, int y);
-	~Player();
+	
 	
 	//Code to be executed once per game loop
-	void update(int frameTime);
+	virtual void update(int frameTime);
+
+	//Draw entity to designated window
+	virtual void draw(sf::RenderWindow window);
 
 	//Movement functions
 	void thrLeft();

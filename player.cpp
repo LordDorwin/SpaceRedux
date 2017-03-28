@@ -7,6 +7,10 @@
 #include <cmath>
 
 
+Player::Player(){
+
+}
+
 Player::Player(int x, int y){
 	_x = x;
 	_y = y;
@@ -64,6 +68,10 @@ void Player::update(int frameTime){
 	//Reset thrust vectors
 	thrVecX = 0;
 	thrVecY = 0;
+}
+
+void Player::draw(sf::RenderWindow window){
+	window.draw(sprite);
 }
 
 void Player::thrLeft(){

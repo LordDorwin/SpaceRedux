@@ -3,20 +3,22 @@
 
 #pragma once
 
+#include "SFML\Window.hpp"
+
 #ifndef ENTITY_H
 #define ENTITY_H
 
 class Entity {
 public:
 	//Constructors/Destructors
-	Entity();
-	~Entity();
+	Entity() {};
+	~Entity() {};
 
 	//Code to be executed once per game loop
-	void update(int frameTime);
+	virtual void update(int frameTime)=0;
 
-
-private:
+	//Draw entity to designated window
+	virtual void draw(sf::RenderWindow window)=0;
 };
 
 #endif
