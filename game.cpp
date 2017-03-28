@@ -15,7 +15,7 @@ int main()
 	std::vector<Entity*> entVec(20);
 
 	Player player = Player(200, 200);
-	entVec.push_back(&player);
+	entVec[0] = (&player);
 
 	sf::Clock mainClock; //starting the main game clock
 
