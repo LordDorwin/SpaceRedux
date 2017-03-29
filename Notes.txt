@@ -1,0 +1,7 @@
+//NOTES
+
+Here lies the list of things to do
+
+Go through player files and clean up some stuff.
+	-Notably moving rotate to the private section
+	-Likely need to multiply amount turned by frametime
