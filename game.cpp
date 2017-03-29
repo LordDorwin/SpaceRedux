@@ -1,9 +1,9 @@
 //game.cpp
 //Primary class for SpaceRedux
 
-#include <list>
 #include <SFML/Graphics.hpp>
 #include"player.h"
+#include"group.h"
 #include"globals.h"
 
 int main()
@@ -11,11 +11,11 @@ int main()
 	const int maxFrameTime = 100000;
 	sf::RenderWindow window(sf::VideoMode(1024, 680), "Clunker Spaceship");
 
-	//Create list of  Entities in gameworld
-	std::list<Entity*> entList;
+	//Create Group of  ships in gameworld
+	Group ShipGrp;
 
 	Player player = Player(200, 200);
-	entList.push_front(&player);
+	ShipGrp.add(&player);
 
 	sf::Clock mainClock; //starting the main game clock
 
@@ -59,11 +59,11 @@ int main()
 		frameTime = std::min(frameTime, maxFrameTime);
 
 		//Update Entities
-		entList.front()->update(frameTime);
+		ShipGrp.update(frameTime);
 
 		//Draw frame
 		window.clear();
-		entList.front()->draw(&window);
+		ShipGrp.draw(&window);
 		window.display();
 
 	}//End of game Loop

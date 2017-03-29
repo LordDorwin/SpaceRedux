@@ -12,15 +12,19 @@
 #include<forward_list>
 
 class Group {
-
+public:
 	//Constructors/Destructors
 	Group();
 	~Group();
 
 	//Add entity to group
-	void grpAdd(Entity* Ent);
+	void add(Entity* Ent);
 	//Remove entity from group
-	void grpRemove(Entity* Ent);
+	void remove(Entity* Ent);
+
+	//Update and draw functions for whole group
+	void update(int frameTime);
+	void draw(sf::RenderWindow* window);
 
 private:
 	std::forward_list<Entity*> GrpList;
