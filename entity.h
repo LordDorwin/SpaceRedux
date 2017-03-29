@@ -3,12 +3,10 @@
 
 #pragma once
 
-#include "SFML\Window.hpp"
+#include "SFML\Graphics.hpp"
 
 #ifndef ENTITY_H
 #define ENTITY_H
-
-class sf::Window;
 
 class Entity {
 public:
