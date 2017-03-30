@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include"player.h"
+#include"enemy.h"
 #include"group.h"
 #include"globals.h"
 
@@ -16,7 +17,12 @@ int main()
 
 	Player player = Player(200, 200);
 	ShipGrp.add(&player);
-
+	Enemy enemy = Enemy(300, 300);
+	ShipGrp.add(&enemy);
+	Enemy enemy2 = Enemy(300, 400);
+	ShipGrp.add(&enemy2);
+	Enemy enemy3 = Enemy(300, 500);
+	ShipGrp.add(&enemy3);
 	sf::Clock mainClock; //starting the main game clock
 
 	sf::Time elapsedTime; //creating the time varaiable
