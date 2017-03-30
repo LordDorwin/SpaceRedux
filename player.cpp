@@ -15,7 +15,7 @@ Player::Player(int x, int y){
 	_x = x;
 	_y = y;
 
-	texture.loadFromFile("Sprites/new_player_big.png");
+	texture.loadFromFile("Sprites/player_ship.png");
 	texture.setSmooth(true);
 
 	sprite.setTexture(texture);
