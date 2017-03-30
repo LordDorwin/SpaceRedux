@@ -19,6 +19,10 @@ public:
 
 	//Draw entity to designated window
 	virtual void draw(sf::RenderWindow* window)=0;
+
+	//Entity position
+	virtual float getx();
+	virtual float gety();
 };
 
 #endif

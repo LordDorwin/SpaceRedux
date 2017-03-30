@@ -25,6 +25,16 @@ Enemy::~Enemy(){
 
 }
 
+float Enemy::getx()
+{
+	return _x;
+}
+
+float Enemy::gety()
+{
+	return _y;
+}
+
 void Enemy::update(int frameTime){
 	getDirection = sprite.getRotation();
 	curDirection = (double)getDirection;

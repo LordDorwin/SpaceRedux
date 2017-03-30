@@ -26,6 +26,10 @@ public:
 	float rThrust = 0.00000022f;
 	float maxSpeed = 0.0001f;
 	float turnSpeed = 0.1f;
+
+	//Entity Position
+	virtual float getx();
+	virtual float gety();
 		
 	//Code to be executed once per game loop
 	virtual void update(int frameTime);

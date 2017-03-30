@@ -18,8 +18,12 @@ public:
 
 	sf::Sprite sprite;
 	sf::Texture texture;
+
 	//Movement variables
 	float turnSpeed = 0.1f;
+
+	virtual float getx();
+	virtual float gety();
 
 	//Code to be executed once per game loop
 	virtual void update(int frameTime);

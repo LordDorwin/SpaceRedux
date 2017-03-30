@@ -27,6 +27,16 @@ Player::~Player(){
 
 }
 
+float Player::getx()
+{
+	return _x;
+}
+
+float Player::gety()
+{
+	return _y;
+}
+
 void Player::update(int frameTime){
 
 	//Calculate amount to rotate
