@@ -3,7 +3,12 @@
 Here lies the list of things to do
 
 Go through player files and clean up some stuff.
-	-Notably moving rotate to the private section
 	-Likely need to multiply amount turned by frametime
 
-Cut down on game.cpp includes by having entity.h include all subclasses?
+ToDo:
+	-add movement class to standardize movement, turning, ect
+	-add finite state machines for AI
+	-add views
+	-add background
+	-add shooting (add bullets to new group)
+	-add targeting
