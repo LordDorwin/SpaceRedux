@@ -11,6 +11,7 @@
 
 class Enemy : public Entity{
 public:
+
 	//Constructors/Destructors
 	Enemy();
 	Enemy(int x, int y);
@@ -24,6 +25,8 @@ public:
 
 	virtual float getx();
 	virtual float gety();
+
+	void setTar(Entity* target);
 
 	//Code to be executed once per game loop
 	virtual void update(int frameTime);
@@ -42,6 +45,9 @@ private:
 	double tarDirection;
 	double turn;
 	float getDirection;
+
+	//Targeting variables
+	Entity* target;
 };
 
 #endif

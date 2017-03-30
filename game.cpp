@@ -18,10 +18,13 @@ int main()
 	Player player = Player(200, 200);
 	ShipGrp.add(&player);
 	Enemy enemy = Enemy(300, 300);
+	enemy.setTar(&player);
 	ShipGrp.add(&enemy);
 	Enemy enemy2 = Enemy(300, 400);
+	enemy2.setTar(&player);
 	ShipGrp.add(&enemy2);
 	Enemy enemy3 = Enemy(300, 500);
+	enemy3.setTar(&player);
 	ShipGrp.add(&enemy3);
 	sf::Clock mainClock; //starting the main game clock
 

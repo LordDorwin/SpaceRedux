@@ -35,10 +35,14 @@ float Enemy::gety()
 	return _y;
 }
 
+void Enemy::setTar(Entity * target){
+	this->target = target;
+}
+
 void Enemy::update(int frameTime){
 	getDirection = sprite.getRotation();
 	curDirection = (double)getDirection;
-	tarDirection = pointDirection((int)_x, (int)_y, mouse::x, mouse::y);
+	tarDirection = pointDirection((int)_x, (int)_y, target->getx(), target->gety());
 	turn = rotate(curDirection, tarDirection);
 	direction = getDirection + turn;
 	sprite.setPosition(sf::Vector2f(_x, _y));
