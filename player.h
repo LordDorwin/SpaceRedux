@@ -26,9 +26,7 @@ public:
 	float rThrust = 0.00000022f;
 	float maxSpeed = 0.0001f;
 	float turnSpeed = 0.1f;
-
-	
-	
+		
 	//Code to be executed once per game loop
 	virtual void update(int frameTime);
 
@@ -40,9 +38,6 @@ public:
 	void thrRight();
 	void thrForward();
 	void thrBack();
-
-	//Rotate ship towards target direction
-	double rotate(double curDirection, double tarDirection);
 
 private:
 	
@@ -64,6 +59,8 @@ private:
 	double turn;
 	float getDirection;
 
+	//Rotate ship towards target direction
+	double rotate(double curDirection, double tarDirection);
 };
 
 
