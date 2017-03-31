@@ -63,4 +63,12 @@
   <ItemGroup>
     <Text Include="Notes.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Sprites\enemy_ship.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Sprites\player_ship.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

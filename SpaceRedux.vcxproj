@@ -141,6 +141,10 @@
   <ItemGroup>
     <Text Include="Notes.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Sprites\enemy_ship.png" />
+    <Image Include="Sprites\player_ship.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
