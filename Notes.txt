@@ -12,3 +12,4 @@ ToDo:
 	-add background
 	-add shooting (add bullets to new group)
 	-add targeting
+	-add scroll to zoom, middle mouse to reset zoom
