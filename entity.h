@@ -21,8 +21,8 @@ public:
 	virtual void draw(sf::RenderWindow* window)=0;
 
 	//Entity position
-	virtual float getx();
-	virtual float gety();
+	virtual float getx()=0;
+	virtual float gety()=0;
 };
 
 #endif
