@@ -2,10 +2,10 @@
 
 Here lies the list of things to do
 
-Go through player files and clean up some stuff.
+Edits:
 	-Likely need to multiply amount turned by frametime
 
-ToDo:
+Adds:
 	-add movement class to standardize movement, turning, ect
 	-add finite state machines for AI
 	-make ai move
