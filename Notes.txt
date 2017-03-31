@@ -9,7 +9,6 @@ ToDo:
 	-add movement class to standardize movement, turning, ect
 	-add finite state machines for AI
 	-make ai move
-	-add views
 	-add background
 	-add shooting (add bullets to new group)
 	-add targeting
