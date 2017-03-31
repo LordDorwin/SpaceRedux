@@ -27,13 +27,11 @@ Player::~Player(){
 
 }
 
-float Player::getx()
-{
+float Player::getx(){
 	return _x;
 }
 
-float Player::gety()
-{
+float Player::gety(){
 	return _y;
 }
 

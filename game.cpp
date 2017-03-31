@@ -26,10 +26,15 @@ int main()
 	Enemy enemy3 = Enemy(300, 500);
 	enemy3.setTar(&player);
 	ShipGrp.add(&enemy3);
+
 	sf::Clock mainClock; //starting the main game clock
 
 	sf::Time elapsedTime; //creating the time varaiable
 	int frameTime;
+
+	//Create and set view:
+	sf::View gameView(sf::Vector2f(100, 100), sf::Vector2f(1024, 680));
+	window.setView(gameView);
 
 	//Game Loop
 	while (window.isOpen())
@@ -39,6 +44,12 @@ int main()
 		{
 			if (event.type == sf::Event::Closed) {
 				window.close();
+			}
+			if (event.type == sf::Event::Resized)
+			{
+				//Update the view to the new size of the window
+				sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);
+				window.setView(sf::View(visibleArea));
 			}
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
@@ -58,14 +69,19 @@ int main()
 		}
 
 		//Update Mouse position
-		sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-		mouse::x = mousePos.x;
-		mouse::y = mousePos.y;
+		sf::Vector2i mousePosView = sf::Mouse::getPosition(window);
+		sf::Vector2f mousePosWorld = window.mapPixelToCoords(mousePosView);
+		mouse::x = mousePosWorld.x;
+		mouse::y = mousePosWorld.y;
 
 		//Calculate frameTime
 		sf::Time elapsedTime = mainClock.restart();
 		frameTime = elapsedTime.asMicroseconds();
 		frameTime = std::min(frameTime, maxFrameTime);
+
+		//Update view
+		gameView.setCenter(player.getx(), player.gety());
+		window.setView(gameView);
 
 		//Update Entities
 		ShipGrp.update(frameTime);
