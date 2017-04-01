@@ -21,7 +21,7 @@ public:
 	sf::Texture texture;
 
 	//Movement variables
-	float turnSpeed = 0.1f;
+	float turnSpeed = 0.00003003f;
 
 	virtual float getx();
 	virtual float gety();

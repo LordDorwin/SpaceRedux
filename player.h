@@ -25,7 +25,7 @@ public:
 	float sThrust = 0.00000022f;
 	float rThrust = 0.00000022f;
 	float maxSpeed = 0.0001f;
-	float turnSpeed = 0.1f;
+	float turnSpeed = 0.00003003f;
 
 	//Entity Position
 	virtual float getx();

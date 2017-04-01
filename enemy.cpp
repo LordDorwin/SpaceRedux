@@ -43,7 +43,7 @@ void Enemy::update(int frameTime){
 	getDirection = sprite.getRotation();
 	curDirection = (double)getDirection;
 	tarDirection = pointDirection((int)_x, (int)_y, target->getx(), target->gety());
-	turn = rotate(curDirection, tarDirection);
+	turn = rotate(curDirection, tarDirection) * frameTime;
 	direction = getDirection + turn;
 	sprite.setPosition(sf::Vector2f(_x, _y));
 	sprite.rotate(turn);
