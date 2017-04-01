@@ -21,11 +21,11 @@ public:
 	sf::Texture texture;
 
 	//Movement variables
-	float fThrust = 0.00000025f;
-	float sThrust = 0.00000022f;
-	float rThrust = 0.00000022f;
+	float fThrust = 0.0000025f;
+	float sThrust = 0.0000012f;
+	float rThrust = 0.0000015f;
 	float maxSpeed = 0.0001f;
-	float turnSpeed = 0.00003003f;
+	float turnSpeed = 0.00005f;
 
 	//Entity Position
 	virtual float getx();

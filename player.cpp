@@ -50,8 +50,8 @@ void Player::update(int frameTime){
 	//Only do heading calculations if thrust is being applied
 	if (thrVecX != 0 || thrVecY != 0) {
 		//Apply thrust
-		heaVecX = heaVecX+thrVecX;
-		heaVecY = heaVecY+thrVecY;
+		heaVecX = heaVecX+(thrVecX / frameTime);
+		heaVecY = heaVecY+(thrVecY / frameTime);
 
 		//Calculate resulting heading
 		heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
@@ -64,8 +64,8 @@ void Player::update(int frameTime){
 		}
 	} else {
 		//Apply friction
-		heaVecX += -globals::friction * sign(heaVecX);
-		heaVecY += -globals::friction * sign(heaVecY);
+		heaVecX += -globals::friction  * sign(heaVecX);
+		heaVecY += -globals::friction  * sign(heaVecY);
 	}
 	
 	//Move Ship
