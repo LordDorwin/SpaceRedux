@@ -83,7 +83,7 @@ int main()
 		gameView.setCenter(player.getx(), player.gety());
 		window.setView(gameView);
 
-		//printf("%d\n", frameTime);
+		printf("%d\n", frameTime);
 		//Update Entities
 		ShipGrp.update(frameTime);
 

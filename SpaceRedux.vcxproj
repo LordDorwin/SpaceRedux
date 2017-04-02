@@ -128,7 +128,6 @@
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="group.cpp" />
     <ClCompile Include="player.cpp" />
-    <ClCompile Include="projectile.cpp" />
     <ClCompile Include="scripts.cpp" />
     <ClCompile Include="utility.cpp" />
   </ItemGroup>
@@ -138,7 +137,6 @@
     <ClInclude Include="globals.h" />
     <ClInclude Include="group.h" />
     <ClInclude Include="player.h" />
-    <ClInclude Include="projectile.h" />
     <ClInclude Include="scripts.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>
