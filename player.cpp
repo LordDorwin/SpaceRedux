@@ -72,30 +72,6 @@ void Player::update(int frameTime){
 	sprite.setPosition(sf::Vector2f(_x, _y));
 	sprite.rotate(turn);
 	heading = scr::calcHeading(this, frameTime);
-	//vector 
-
-	////Only do heading calculations if thrust is being applied
-	//if (thrust.x != 0 || thrust.y != 0) {
-	//	//Apply thrust
-	//	heading.x = heading.x+(thrust.x / frameTime);
-	//	heading.y = heading.y+(thrust.y / frameTime);
-
-	//	//Calculate resulting heading
-	//	heaSpeed = sqrt((heading.x*heading.x) + (heading.y*heading.y));
-	//	heaDir = radDeg(acos(heading.x / heaSpeed));
-
-	//	//Limit speed
-	//	if (heaSpeed > maxSpeed) {
-	//		heading.x = maxSpeed * abs(cos(degRad(heaDir))) * sign(heading.x);
-	//		heading.y = maxSpeed * abs(sin(degRad(heaDir))) * sign(heading.y);
-	//	}
-	//} else {
-	//	//Apply friction
-	//	heading.x += -globals::friction  * sign(heading.x);
-	//	heading.y += -globals::friction  * sign(heading.y);
-	//}
-
-	//keep past here
 	
 	//Move Ship
 	_x += heading.x * frameTime;
@@ -130,27 +106,3 @@ void Player::thrBack(){
 	thrust.x += rThrust * cos(degRad(direction + 180));
 	thrust.y += rThrust * sin(degRad(direction + 180));
 }
-
-//double Player::rotate(double curDirection, double tarDirection) //this logic sucked so hard
-//{
-//	if (abs(curDirection - tarDirection) <2) {
-//		return 0;
-//	} else if (curDirection - tarDirection > abs(curDirection - (360 + tarDirection))) {
-//		if (curDirection - tarDirection > 0) {
-//			return turnSpeed;
-//		} else {
-//			return 0 - turnSpeed;
-//		}
-//	} else if (tarDirection > curDirection){
-//		if (tarDirection - curDirection > 180) {
-//			return 0 - turnSpeed;
-//		} else {
-//			return turnSpeed;
-//		}
-//		return turnSpeed;
-//	} else if (tarDirection < curDirection) {
-//		return 0 - turnSpeed;
-//	}
-//	else
-//		return 0; //I legit have no idea how you would get here but it wanted an emergency exit state
-//}

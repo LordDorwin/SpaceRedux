@@ -78,31 +78,3 @@ void Enemy::update(int frameTime){
 void Enemy::draw(sf::RenderWindow * window){
 	window->draw(sprite);
 }
-
-/*double Enemy::rotate(double curDirection, double tarDirection){
-	if (abs(curDirection - tarDirection) <2) {
-		return 0;
-	}
-	else if (curDirection - tarDirection > abs(curDirection - (360 + tarDirection))) {
-		if (curDirection - tarDirection > 0) {
-			return turnSpeed;
-		}
-		else {
-			return 0 - turnSpeed;
-		}
-	}
-	else if (tarDirection > curDirection) {
-		if (tarDirection - curDirection > 180) {
-			return 0 - turnSpeed;
-		}
-		else {
-			return turnSpeed;
-		}
-		return turnSpeed;
-	}
-	else if (tarDirection < curDirection) {
-		return 0 - turnSpeed;
-	}
-	else
-		return 0;
-}*/

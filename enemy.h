@@ -55,8 +55,6 @@ public:
 	virtual void draw(sf::RenderWindow* window);
 
 private:
-	//Rotate ship towards target direction
-	//double rotate(double curDirection, double tarDirection);
 
 	//Heading and thrust vectors
 	sf::Vector2f heading;

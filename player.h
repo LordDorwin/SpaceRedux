@@ -77,8 +77,6 @@ private:
 	double turn;
 	double prevDirection;
 
-	//Rotate ship towards target direction
-	//double rotate(double curDirection, double tarDirection);
 };
 
 
