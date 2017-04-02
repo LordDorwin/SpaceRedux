@@ -72,7 +72,7 @@ Entity * Enemy::getTar(){
 void Enemy::update(int frameTime){
 	prevDirection = (double)(sprite.getRotation());
 	//tarDirection = pointDirection((int)_x, (int)_y, mouse::x, mouse::y);
-	turn = scr::calcRotate(this) * frameTime; //keep me
+	turn = scr::calcRotate(this) * frameTime;
 	direction = prevDirection + turn;
 	sprite.setPosition(sf::Vector2f(_x, _y));
 	sprite.rotate(turn);
