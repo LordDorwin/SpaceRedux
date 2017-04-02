@@ -4,6 +4,7 @@
 #include "enemy.h"
 #include "utility.h"
 #include "globals.h"
+#include "scripts.h"
 
 Enemy::Enemy(){
 
@@ -35,25 +36,50 @@ float Enemy::gety()
 	return _y;
 }
 
+double Enemy::getDir()
+{
+	return prevDirection;
+}
+
+sf::Vector2f Enemy::getHea()
+{
+	return heading;
+}
+
+sf::Vector2f Enemy::getThr()
+{
+	return thrust;
+}
+
+float Enemy::getTurnSpeed()
+{
+	return turnSpeed;
+}
+
+float Enemy::getMaxSpeed()
+{
+	return maxSpeed;
+}
+
 void Enemy::setTar(Entity * target){
 	this->target = target;
 }
 
 void Enemy::update(int frameTime){
-	getDirection = sprite.getRotation();
-	curDirection = (double)getDirection;
-	tarDirection = pointDirection((int)_x, (int)_y, target->getx(), target->gety());
-	turn = rotate(curDirection, tarDirection) * frameTime;
-	direction = getDirection + turn;
+	prevDirection = (double)(sprite.getRotation());
+	//tarDirection = pointDirection((int)_x, (int)_y, mouse::x, mouse::y);
+	turn = scr::calcRotate(this) * frameTime; //keep me
+	direction = prevDirection + turn;
 	sprite.setPosition(sf::Vector2f(_x, _y));
 	sprite.rotate(turn);
+	heading = scr::calcHeading(this, frameTime);
 }
 
 void Enemy::draw(sf::RenderWindow * window){
 	window->draw(sprite);
 }
 
-double Enemy::rotate(double curDirection, double tarDirection){
+/*double Enemy::rotate(double curDirection, double tarDirection){
 	if (abs(curDirection - tarDirection) <2) {
 		return 0;
 	}
@@ -79,4 +105,4 @@ double Enemy::rotate(double curDirection, double tarDirection){
 	}
 	else
 		return 0;
-}
+}*/

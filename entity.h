@@ -21,8 +21,23 @@ public:
 	virtual void draw(sf::RenderWindow* window)=0;
 
 	//Entity position
-	virtual float getx()=0;
-	virtual float gety()=0;
+	virtual float getx() = 0;
+	virtual float gety() = 0;
+
+	//Entity direction
+	virtual double getDir() = 0;
+
+	//Entity thrust
+	virtual sf::Vector2f getThr() = 0;
+
+	//Entity heading
+	virtual sf::Vector2f getHea() = 0;
+
+	//Entity turn speed
+	virtual float getTurnSpeed() = 0;
+
+	//Entity max speed
+	virtual float getMaxSpeed() = 0;
 };
 
 #endif

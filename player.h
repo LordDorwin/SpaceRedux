@@ -30,7 +30,22 @@ public:
 	//Entity Position
 	virtual float getx();
 	virtual float gety();
-		
+
+	//Entity Direction
+	virtual double getDir();
+
+	//Entity Heading
+	virtual sf::Vector2f getHea();
+
+	//Entity Thrust
+	virtual sf::Vector2f getThr();
+
+	//Entity Turn Speed
+	virtual float getTurnSpeed();
+
+	//Entity Max Speed
+	virtual float getMaxSpeed();
+
 	//Code to be executed once per game loop
 	virtual void update(int frameTime);
 
@@ -52,19 +67,18 @@ private:
 	float _x = 0, _y = 0;
 
 	//Heading and thrust vectors
-	float heaVecX = 0, heaVecY = 0;
-	float thrVecX = 0, thrVecY = 0;
-	double heaDir;
+	sf::Vector2f heading;
+	sf::Vector2f thrust;
 
 	//Rotation variables
 	double direction;
-	double curDirection;
+	//double curDirection;
 	double tarDirection;
 	double turn;
-	float getDirection;
+	double prevDirection;
 
 	//Rotate ship towards target direction
-	double rotate(double curDirection, double tarDirection);
+	//double rotate(double curDirection, double tarDirection);
 };
 
 
