@@ -38,6 +38,9 @@ public:
 
 	//Entity max speed
 	virtual float getMaxSpeed() = 0;
+
+	//Get pointer to current target
+	virtual Entity* getTar() = 0;
 };
 
 #endif

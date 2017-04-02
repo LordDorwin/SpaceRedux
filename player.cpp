@@ -67,7 +67,7 @@ void Player::update(int frameTime){
 	//Direction is used for movement, cur/tarDirection used for rotation
 	prevDirection = (double)(sprite.getRotation());
 	//tarDirection = pointDirection((int)_x, (int)_y, mouse::x, mouse::y);
-	turn = scr::calcRotate(this) * frameTime; //keep me
+	turn = Player::calcRotate(this) * frameTime; //keep me
 	direction = prevDirection + turn;
 	sprite.setPosition(sf::Vector2f(_x, _y));
 	sprite.rotate(turn);
@@ -105,4 +105,41 @@ void Player::thrForward(){
 void Player::thrBack(){
 	thrust.x += rThrust * cos(degRad(direction + 180));
 	thrust.y += rThrust * sin(degRad(direction + 180));
+}
+
+Entity * Player::getTar(){
+	//Change me once ship switching is implemented
+	return this;
+}
+
+double Player::calcRotate(Entity* Ent) {
+	double prevDirection = Ent->getDir();
+	double tarDirection = pointDirection((int)Ent->getx(), (int)Ent->gety(), mouse::x, mouse::y);
+	float turnSpeed = Ent->getTurnSpeed();
+
+	if (abs(prevDirection - tarDirection) <2) {
+		return 0;
+	}
+	else if (prevDirection - tarDirection > abs(prevDirection - (360 + tarDirection))) {
+		if (prevDirection - tarDirection > 0) {
+			return turnSpeed;
+		}
+		else {
+			return 0 - turnSpeed;
+		}
+	}
+	else if (tarDirection > prevDirection) {
+		if (tarDirection - prevDirection > 180) {
+			return 0 - turnSpeed;
+		}
+		else {
+			return turnSpeed;
+		}
+		return turnSpeed;
+	}
+	else if (tarDirection < prevDirection) {
+		return 0 - turnSpeed;
+	}
+	else
+		return 0; //must have exit state
 }

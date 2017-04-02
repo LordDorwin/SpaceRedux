@@ -3,10 +3,11 @@
 Here lies the list of things to do
 
 Edits:
-	-Likely need to multiply amount turned by frametime
+	-go through existing files and clean up includes
 
 Adds:
 	-add movement class to standardize movement, turning, ect
+	-add logarithmic scale instead of max speed (realativistic bomber)
 	-make friction work with trig you fool
 	-add finite state machines for AI
 	-make ai move
@@ -14,3 +15,7 @@ Adds:
 	-add shooting (add bullets to new group)
 	-add targeting
 	-add scroll to zoom, middle mouse to reset zoom
+
+
+Ideas:
+	-you are l33t hacker taking over ships for your fleet

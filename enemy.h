@@ -47,6 +47,7 @@ public:
 	virtual float getMaxSpeed();
 
 	void setTar(Entity* target);
+	Entity* getTar();
 
 	//Code to be executed once per game loop
 	virtual void update(int frameTime);

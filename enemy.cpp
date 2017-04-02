@@ -65,6 +65,10 @@ void Enemy::setTar(Entity * target){
 	this->target = target;
 }
 
+Entity * Enemy::getTar(){
+	return target;
+}
+
 void Enemy::update(int frameTime){
 	prevDirection = (double)(sprite.getRotation());
 	//tarDirection = pointDirection((int)_x, (int)_y, mouse::x, mouse::y);

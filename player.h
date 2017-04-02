@@ -58,8 +58,13 @@ public:
 	void thrForward();
 	void thrBack();
 
+	Entity* getTar();
+
+	double calcRotate(Entity * Ent);
+
+
 private:
-	
+
 	//Holds current speed on current heading
 	float heaSpeed;
 

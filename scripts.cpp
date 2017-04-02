@@ -11,7 +11,7 @@
 //rotate 
 double scr::calcRotate(Entity* Ent){
 	double prevDirection = Ent->getDir();
-	double tarDirection = pointDirection((int)Ent->getx(), (int)Ent->gety(), mouse::x, mouse::y);
+	double tarDirection = pointDirection((int)Ent->getx(), (int)Ent->gety(), Ent->getTar()->gety(), Ent->getTar()->gety());
 	float turnSpeed = Ent->getTurnSpeed();
 
 	if (abs(prevDirection - tarDirection) <2) {
