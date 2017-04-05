@@ -50,8 +50,8 @@ void Player::update(int frameTime){
 	//Only do heading calculations if thrust is being applied
 	if (thrVecX != 0 || thrVecY != 0) {
 		//Apply thrust
-		heaVecX = heaVecX+(thrVecX / frameTime);
-		heaVecY = heaVecY+(thrVecY / frameTime);
+		heaVecX = heaVecX + thrVecX;
+		heaVecY = heaVecY + thrVecY;
 
 		//Calculate resulting heading
 		heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
