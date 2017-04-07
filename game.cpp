@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include"player.h"
+#include"ally.h"
 #include"enemy.h"
 #include"group.h"
 #include"globals.h"
@@ -17,6 +18,10 @@ int main()
 
 	Player player = Player(200, 200);
 	ShipGrp.add(&player);
+	Ally ally1 = Ally(250, 200);
+	ShipGrp.add(&ally1);
+	Ally ally2 = Ally(250, 200);
+	ShipGrp.add(&ally2);
 	Enemy enemy = Enemy(300, 300);
 	enemy.setTar(&player);
 	ShipGrp.add(&enemy);

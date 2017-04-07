@@ -39,6 +39,9 @@
     <ClCompile Include="player.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="ally.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="globals.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files\Entities</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="ally.h">
       <Filter>Header Files\Entities</Filter>
     </ClInclude>
   </ItemGroup>
