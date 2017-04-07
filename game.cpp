@@ -17,8 +17,6 @@ int main()
 	Group ShipGrp;
 
 	//Create entities
-	Player player = Player(200, 200);
-	ShipGrp.add(&player);
 	Ally ally1 = Ally(250, 200);
 	ShipGrp.add(&ally1);
 	Ally ally2 = Ally(300, 200);
@@ -28,15 +26,18 @@ int main()
 	Enemy enemy2 = Enemy(300, 400);
 	ShipGrp.add(&enemy2);
 	Enemy enemy3 = Enemy(300, 500);
-	enemy3.setTar(&player);
 	ShipGrp.add(&enemy3);
 
 	//Set Targets
 	ally1.setTar(&enemy1);
 	ally2.setTar(&enemy2);
-	enemy1.setTar(&player);
-	enemy2.setTar(&player);
-	enemy3.setTar(&player);
+	enemy1.setTar(&ally1);
+	enemy2.setTar(&ally1);
+	enemy3.setTar(&ally1);
+
+	//Create player and set initial control
+	Player player = Player();
+	player.setControl(&ally1);
 
 	sf::Clock mainClock; //starting the main game clock
 

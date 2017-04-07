@@ -7,6 +7,8 @@ Edits:
 
 Adds:
 	-add movement class to standardize movement, turning, ect
+	-Instead of just having no collisons, make ships on same side move away from one another if there
+		is a collision
 	-make friction work with trig you fool
 	-add finite state machines for AI
 	-make ai move
