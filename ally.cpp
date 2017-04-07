@@ -1,9 +1,10 @@
 //ally.cpp
 
-#include "Ally.h"
+#include "ally.h"
 #include "globals.h"
 #include "utility.h"
 #include <cmath>
+
 
 Ally::Ally() {
 
@@ -25,84 +26,35 @@ Ally::~Ally() {
 
 }
 
-float Ally::getx() {
+float Ally::getx()
+{
 	return _x;
 }
 
-float Ally::gety() {
+float Ally::gety()
+{
 	return _y;
 }
 
-void Ally::update(int frameTime) {
+void Ally::setTar(Entity * target) {
+	this->target = target;
+}
 
-	//Calculate amount to rotate
-	//Direction is used for movement, cur/tarDirection used for rotation
+void Ally::update(int frameTime) {
 	getDirection = sprite.getRotation();
 	curDirection = (double)getDirection;
-	tarDirection = pointDirection((int)_x, (int)_y, mouse::x, mouse::y);
+	tarDirection = pointDirection((int)_x, (int)_y, target->getx(), target->gety());
 	turn = rotate(curDirection, tarDirection) * frameTime;
 	direction = getDirection + turn;
 	sprite.setPosition(sf::Vector2f(_x, _y));
 	sprite.rotate(turn);
-
-	//Only do heading calculations if thrust is being applied
-	if (thrVecX != 0 || thrVecY != 0) {
-		//Apply thrust
-		heaVecX = heaVecX + thrVecX;
-		heaVecY = heaVecY + thrVecY;
-
-		//Calculate resulting heading
-		heaSpeed = sqrt((heaVecX*heaVecX) + (heaVecY*heaVecY));
-		heaDir = radDeg(acos(heaVecX / heaSpeed));
-
-		//Limit speed
-		if (heaSpeed > maxSpeed) {
-			heaVecX = maxSpeed * abs(cos(degRad(heaDir))) * sign(heaVecX);
-			heaVecY = maxSpeed * abs(sin(degRad(heaDir))) * sign(heaVecY);
-		}
-	}
-	else {
-		//Apply friction
-		heaVecX += -globals::friction  * sign(heaVecX);
-		heaVecY += -globals::friction  * sign(heaVecY);
-	}
-
-	//Move Ship
-	_x += heaVecX * frameTime;
-	_y += heaVecY * frameTime;
-
-
-	//Reset thrust vectors
-	thrVecX = 0;
-	thrVecY = 0;
 }
 
-void Ally::draw(sf::RenderWindow* window) {
+void Ally::draw(sf::RenderWindow * window) {
 	window->draw(sprite);
 }
 
-void Ally::thrLeft() {
-	thrVecX += sThrust * cos(degRad(direction - 90));
-	thrVecY += sThrust * sin(degRad(direction - 90));
-}
-
-void Ally::thrRight() {
-	thrVecX += sThrust * cos(degRad(direction + 90));
-	thrVecY += sThrust * sin(degRad(direction + 90));
-}
-
-void Ally::thrForward() {
-	thrVecX += fThrust * cos(degRad(direction));
-	thrVecY += fThrust * sin(degRad(direction));
-}
-
-void Ally::thrBack() {
-	thrVecX += rThrust * cos(degRad(direction + 180));
-	thrVecY += rThrust * sin(degRad(direction + 180));
-}
-
-double Ally::rotate(double curDirection, double tarDirection) //this logic sucked so hard
-{
+double Ally::rotate(double curDirection, double tarDirection) {
 	if (abs(curDirection - tarDirection) <2) {
 		return 0;
 	}
@@ -127,5 +79,5 @@ double Ally::rotate(double curDirection, double tarDirection) //this logic sucke
 		return 0 - turnSpeed;
 	}
 	else
-		return 0; //I legit have no idea how you would get here but it wanted an emergency exit state
+		return 0;
 }

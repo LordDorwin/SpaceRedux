@@ -16,21 +16,27 @@ int main()
 	//Create Group of  ships in gameworld
 	Group ShipGrp;
 
+	//Create entities
 	Player player = Player(200, 200);
 	ShipGrp.add(&player);
 	Ally ally1 = Ally(250, 200);
 	ShipGrp.add(&ally1);
-	Ally ally2 = Ally(250, 200);
+	Ally ally2 = Ally(300, 200);
 	ShipGrp.add(&ally2);
-	Enemy enemy = Enemy(300, 300);
-	enemy.setTar(&player);
-	ShipGrp.add(&enemy);
+	Enemy enemy1 = Enemy(300, 300);
+	ShipGrp.add(&enemy1);
 	Enemy enemy2 = Enemy(300, 400);
-	enemy2.setTar(&player);
 	ShipGrp.add(&enemy2);
 	Enemy enemy3 = Enemy(300, 500);
 	enemy3.setTar(&player);
 	ShipGrp.add(&enemy3);
+
+	//Set Targets
+	ally1.setTar(&enemy1);
+	ally2.setTar(&enemy2);
+	enemy1.setTar(&player);
+	enemy2.setTar(&player);
+	enemy3.setTar(&player);
 
 	sf::Clock mainClock; //starting the main game clock
 
