@@ -2,11 +2,15 @@
 
 Here lies the list of things to do
 
+
+Bugs:
+	-Faster computers add accelleration and friction faster than slower ones
+
 Edits:
 	-Likely need to multiply amount turned by frametime
 
 Adds:
-	-add movement class to standardize movement, turning, ect
+	-add movement namespace to standardize movement, turning, ect
 	-Instead of just having no collisons, make ships on same side move away from one another if there
 		is a collision
 	-make friction work with trig you fool
