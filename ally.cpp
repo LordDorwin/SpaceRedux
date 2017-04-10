@@ -3,6 +3,7 @@
 #include "ally.h"
 #include "globals.h"
 #include "utility.h"
+#include "scripts.h"
 #include <cmath>
 
 
@@ -53,27 +54,7 @@ void Ally::update(int frameTime) {
 	sprite.setPosition(sf::Vector2f(_x, _y));
 	sprite.rotate(turn);
 
-	//Only do heading calculations if thrust is being applied
-	if (thrust.x != 0 || thrust.y != 0) {
-		//Apply thrust
-		heading.x = heading.x + thrust.x;
-		heading.y = heading.y + thrust.y;
-
-		//Calculate resulting heading
-		heaSpeed = sqrt((heading.x*heading.x) + (heading.y*heading.y));
-		heaDir = radDeg(acos(heading.x / heaSpeed));
-
-		//Limit speed
-		if (heaSpeed > maxSpeed) {
-			heading.x = maxSpeed * abs(cos(degRad(heaDir))) * sign(heading.x);
-			heading.y = maxSpeed * abs(sin(degRad(heaDir))) * sign(heading.y);
-		}
-	}
-	else {
-		//Apply friction
-		heading.x += -globals::friction  * sign(heading.x);
-		heading.y += -globals::friction  * sign(heading.y);
-	}
+	heading = scr::calcHeading(this, frameTime);
 
 	//Move Ship
 	_x += heading.x * frameTime;

@@ -51,8 +51,8 @@ sf::Vector2f scr::calcHeading(Entity* Ent, int frameTime){
 	//Only do heading calculations if thrust is being applied
 	if (thrust.x != 0 || thrust.y != 0) {
 		//Apply thrust
-		heading.x = heading.x + (thrust.x / frameTime);
-		heading.y = heading.y + (thrust.y / frameTime);
+		heading.x = heading.x + thrust.x;
+		heading.y = heading.y + thrust.y;
 
 		//Calculate resulting heading
 		float heaSpeed = sqrt((heading.x*heading.x) + (heading.y*heading.y));
@@ -69,5 +69,6 @@ sf::Vector2f scr::calcHeading(Entity* Ent, int frameTime){
 		heading.x += -globals::friction  * sign(heading.x);
 		heading.y += -globals::friction  * sign(heading.y);
 	}
+
 	return heading;
 }
