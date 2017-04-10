@@ -63,6 +63,7 @@ void Ally::update(int frameTime) {
 	//Reset thrust vectors
 	thrust.x = 0;
 	thrust.y = 0;
+	tforw, tback, tleft, tright = false;
 }
 
 void Ally::draw(sf::RenderWindow * window) {
@@ -70,23 +71,31 @@ void Ally::draw(sf::RenderWindow * window) {
 }
 
 void Ally::thrLeft() {
-	thrust.x += sThrust * cos(degRad(direction - 90));
-	thrust.y += sThrust * sin(degRad(direction - 90));
+	if (!tleft) {
+		thrust.x += sThrust * cos(degRad(direction - 90));
+		thrust.y += sThrust * sin(degRad(direction - 90));
+	}
 }
 
 void Ally::thrRight() {
-	thrust.x += sThrust * cos(degRad(direction + 90));
-	thrust.y += sThrust * sin(degRad(direction + 90));
+	if (!tright) {
+		thrust.x += sThrust * cos(degRad(direction + 90));
+		thrust.y += sThrust * sin(degRad(direction + 90));
+	}
 }
 
 void Ally::thrForward() {
-	thrust.x += fThrust * cos(degRad(direction));
-	thrust.y += fThrust * sin(degRad(direction));
+	if (!tforw) {
+		thrust.x += fThrust * cos(degRad(direction));
+		thrust.y += fThrust * sin(degRad(direction));
+	}
 }
 
 void Ally::thrBack() {
-	thrust.x += rThrust * cos(degRad(direction + 180));
-	thrust.y += rThrust * sin(degRad(direction + 180));
+	if (!tback) {
+		thrust.x += rThrust * cos(degRad(direction + 180));
+		thrust.y += rThrust * sin(degRad(direction + 180));
+	}
 }
 
 double Ally::getDir(){

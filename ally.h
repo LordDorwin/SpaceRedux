@@ -70,6 +70,11 @@ private:
 	double turn;
 	float getDirection;
 
+	bool tleft = false;
+	bool tright = false;
+	bool tforw = false;
+	bool tback = false;
+
 	//Targeting variables
 	Entity* target;
 };
