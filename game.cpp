@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include"player.h"
+#include"ally.h"
 #include"enemy.h"
 #include"group.h"
 #include"globals.h"
@@ -15,17 +16,28 @@ int main()
 	//Create Group of  ships in gameworld
 	Group ShipGrp;
 
-	Player player = Player(200, 200);
-	ShipGrp.add(&player);
-	Enemy enemy = Enemy(300, 300);
-	enemy.setTar(&player);
-	ShipGrp.add(&enemy);
+	//Create entities
+	Ally ally1 = Ally(250, 200);
+	ShipGrp.add(&ally1);
+	Ally ally2 = Ally(300, 200);
+	ShipGrp.add(&ally2);
+	Enemy enemy1 = Enemy(300, 300);
+	ShipGrp.add(&enemy1);
 	Enemy enemy2 = Enemy(300, 400);
-	enemy2.setTar(&player);
 	ShipGrp.add(&enemy2);
 	Enemy enemy3 = Enemy(300, 500);
-	enemy3.setTar(&player);
 	ShipGrp.add(&enemy3);
+
+	//Set Targets
+	ally1.setTar(&enemy1);
+	ally2.setTar(&enemy2);
+	enemy1.setTar(&ally1);
+	enemy2.setTar(&ally1);
+	enemy3.setTar(&ally1);
+
+	//Create player and set initial control
+	Player player = Player();
+	player.setControl(&ally1);
 
 	sf::Clock mainClock; //starting the main game clock
 

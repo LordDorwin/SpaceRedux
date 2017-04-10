@@ -1,80 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
-    </Filter>
-    <Filter Include="Source Files\Entities">
-      <UniqueIdentifier>{eb346376-790f-4e97-8968-fc6ad3e5f96c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Entities">
-      <UniqueIdentifier>{4e7ef236-09e3-45a0-a544-b03644f21381}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="game.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="globals.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utility.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="group.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="enemy.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="player.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="scripts.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="utility.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ally.cpp">
+      <Filter>Source\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>Source\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="globals.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utility.h">
-      <Filter>Header Files</Filter>
+      <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="group.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="enemy.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="entity.h">
-      <Filter>Header Files\Entities</Filter>
+      <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
-      <Filter>Header Files\Entities</Filter>
+      <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="scripts.h">
-      <Filter>Header Files</Filter>
+      <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="utility.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ally.h">
+      <Filter>Headers\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>Headers\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Headers\Entities</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Sprites\enemy_ship.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Sprites\player_ship.png">
+      <Filter>Resources</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Notes.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Sprites\enemy_ship.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Sprites\player_ship.png">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{e19ff96c-86ed-4c12-8fe8-fd90db08b8fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{a4f99c26-9562-42fc-8d13-601a0d1b7c2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{ba032d83-ea6d-4a6f-8ec0-158fb9800389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Entities">
+      <UniqueIdentifier>{7c074720-6c3b-4dc2-bb04-1e856502089f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Entities">
+      <UniqueIdentifier>{68315107-a123-4d18-92ea-24d8b481e3b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
